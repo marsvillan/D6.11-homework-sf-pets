@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block extra_title %}- {{object.breed.name}} {{object.name}}{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="col-lg-4">
+         <img height="400" width="400"
+              src="{{ object.photo.url }}" alt="" class="fit">
+    </div>
+    <div>
+        <ul>
+            <li>Кличка: {{object.name}}</li>
+            <li>Порода: {{object.breed.name}}</li>
+            <li>Вид: {{object.breed.kind}}</li>
+            <li>Состояние: {{object.get_condition_display}}</li>
+            <li>В общих чертах: {{object.description}}</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
